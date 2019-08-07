@@ -59,7 +59,7 @@ app.post('/transfer', (req, res) => {
 });
 
 app.get('/payment', (req, res) => { 
-    res.render('payment');
+    res.render('payment', {account: accounts.credit});
 });
 app.post('/payment', (req, res) => { 
     accounts.credit.balance -= req.body.amount;
@@ -69,7 +69,7 @@ app.post('/payment', (req, res) => {
 
     fs.writeFileSync(path.join(__dirname, 'json/accounts.json'), accountsJSON, 'utf8');
 
-    res.render('payment', { message: 'Payment Successful', account: accounts.credit });
+    res.render('payment', { message: "Payment Successful", account: accounts.credit });
 
 });
 
