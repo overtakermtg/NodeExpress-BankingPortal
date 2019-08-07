@@ -40,7 +40,7 @@ app.get('/payment', (req, res) => {
 });
 
 app.get('/profile', (req, res) => { 
-    res.render('profile', { users: users[0], title : 'Profile' });
+    res.render('profile', { users: users[0] });
 });
 
 
