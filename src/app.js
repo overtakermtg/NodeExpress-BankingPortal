@@ -19,7 +19,6 @@ const userData = fs.readFileSync(
     path.join(__dirname, 'json', 'users.json'), 'utf8'
 );
 const users = JSON.parse(userData);
-const user = JSON.parse(userData);
 
 app.get('/savings', (req, res) => { 
     res.render('account', { account : accounts.savings });
@@ -40,7 +39,7 @@ app.get('/payment', (req, res) => {
 });
 
 app.get('/profile', (req, res) => { 
-    res.render('profile', { user: user[0] });
+    res.render('profile', { users: users[0] });
 });
 
 
